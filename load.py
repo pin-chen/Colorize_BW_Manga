@@ -5,7 +5,7 @@ import cv2
 
 
 def load_image(paths):
-    np.random.seed(7414)
+    np.random.seed(0)
     subpaths = np.random.choice(paths, 800, replace=False)
     data = []
     i = 1
