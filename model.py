@@ -1,5 +1,6 @@
 from keras.layers import Conv2D, UpSampling2D, InputLayer
 from keras.models import Sequential
+from keras.optimizers import Adam
 
 
 def simple_cnn():
@@ -20,5 +21,5 @@ def simple_cnn():
     model.add(Conv2D(4, (3, 3), activation='relu', padding='same'))
     model.add(Conv2D(2, (3, 3), activation='tanh', padding='same'))
     model.add(UpSampling2D((2, 2)))
-    model.compile(optimizer='adam', loss="mse")
+    model.compile(optimizer=Adam(learning_rate=0.0001), loss='mse')
     return model
