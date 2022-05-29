@@ -1,10 +1,9 @@
 from load import load_image
 from model import simple_cnn
 
-from skimage.transform import resize
-from skimage.color import rgb2lab, lab2rgb, rgb2gray
-from skimage.io import imread, imsave
 from keras.models import load_model
+from skimage.color import lab2rgb, rgb2gray
+from skimage.io import imsave
 import numpy as np
 import pickle
 import glob
@@ -21,18 +20,17 @@ if not os.path.exists(data_path):
 
 with open(data_path, 'rb') as f:
     data = pickle.load(f)
-    img_lab = np.asarray(data)  # adjust the training data size
+    img_lab = np.asarray(data[200:216])  # adjust the training data
     L = img_lab[:, :, :, 0]
     ab = img_lab[:, :, :, 1:]/128
     L = L.reshape(len(img_lab), 256, 256, 1)
     ab = ab.reshape(len(img_lab), 256, 256, 2)
     m = simple_cnn()
-    m.fit(x=L, y=ab, batch_size=32, epochs=3)
+    m.fit(x=L, y=ab, batch_size=16, epochs=8000)
     m.save('Table/simple_model.h5')
 
 m = load_model('Table/simple_model.h5')
-img = imread('test.png')
-img_lab = rgb2lab(resize(img[:, :, :3], (256, 256)))
+img_lab = data[np.random.randint(0, len(data))]
 L = img_lab[:, :, 0]
 L = L.reshape(1, 256, 256, 1)
 output = m.predict(L)
