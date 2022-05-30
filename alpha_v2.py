@@ -31,7 +31,7 @@ model.add(Conv2D(2, (3, 3), activation='tanh', padding='same'))
 model.compile(optimizer='rmsprop',
 			loss='mse')
 i = 0
-for path in glob.glob('D:\github\Introduction-to-AI-Final-Project\Picture\oringinal/*'):
+for path in glob.glob('Picture\oringinal/*'):
     i += 1
     if i > 10:
         break
@@ -45,7 +45,7 @@ for path in glob.glob('D:\github\Introduction-to-AI-Final-Project\Picture\oringi
     model.fit(x=X, y=Y,	batch_size=1, epochs=5)
 
 print(model.evaluate(X, Y, batch_size=1))
-image = img_to_array(load_img('D:\github\Introduction-to-AI-Final-Project\Picture\manga (1).jpg'))
+image = img_to_array(load_img('Picture\manga (1).jpg'))
 image = np.array(image, dtype=float)
 X = rgb2lab(1.0/255*image)[:,:,0]
 X = X.reshape(1, 1200, 816, 1)
@@ -56,5 +56,5 @@ output *= 128
 cur = np.zeros((1200, 816, 3))
 cur[:,:,0] = X[0][:,:,0]
 cur[:,:,1:] = output[0]
-imsave("img_result.png", lab2rgb(cur))
-imsave("img_gray_version.png", rgb2gray(lab2rgb(cur)))
+imsave("Results\img_result.png", lab2rgb(cur))
+imsave("Results\img_gray_version.png", rgb2gray(lab2rgb(cur)))
