@@ -6,12 +6,16 @@ import pickle
 
 
 def load_image(paths, target):
-    subpaths = np.random.choice(paths, 10, replace=False)
+    subpaths = np.random.choice(paths, 256, replace=False)
     data = []
+    i = 1
     for path in subpaths:
-        img_lab = rgb2lab(resize(imread(path), (1080, 1920)))
+        if i % 100 == 0:
+            print(f"Processing image ({i}/{len(subpaths)})")
+        img_lab = rgb2lab(resize(imread(path)[:, :, :3], (256, 256)))
         data.append(img_lab)
+        i += 1
     print("Saving data...")
     with open(target, 'wb') as f:
         pickle.dump(data, f)
-    print("Saved!!!")
+
