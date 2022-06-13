@@ -17,6 +17,9 @@ pip install -r requirements.txt
 	```
 	python screenshot.py
 	```
+	
+	We need at least 600 images.
+	
 - CNN.ver
 	
 	Train agent with 240 images by different models:
