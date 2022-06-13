@@ -32,11 +32,11 @@ if __name__ == '__main__':
     testX2 = np.asarray([resize(gray2rgb(X[:, :, 0]), (224, 224)) for X in testX1])
     trainX = (trainX1, classifier.predict(preprocess_input(trainX2)))
     testX = (testX1, classifier.predict(preprocess_input(testX2)))
-    if options.best:
-        m = best_version()
-    else:
+    if options.unet:
         m = unet_vgg16()
-    history = m.fit(x=trainX, y=trainY, batch_size=16, epochs=200, validation_data=(testX, testY))
+    else:
+        m = best_version()
+    history = m.fit(x=trainX, y=trainY, batch_size=8, epochs=250, validation_data=(testX, testY))
     m.save('Table/Unet-Classifier.h5')
 
     plt.plot(history.history['categorical_accuracy'])
