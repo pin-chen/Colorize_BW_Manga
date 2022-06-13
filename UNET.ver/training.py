@@ -26,10 +26,6 @@ def readCommand(argv):
 
 if __name__ == '__main__':
     options = readCommand(sys.argv)
-    if options.best:
-        m = best_version()
-    else:
-        m = unet_vgg16()
     classifier = VGG16(weights='imagenet', include_top=True)
     trainX1, trainY, testX1, testY = process(256, 240, 16, save=False)
     trainX2 = np.asarray([resize(gray2rgb(X[:, :, 0]), (224, 224)) for X in trainX1])
