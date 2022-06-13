@@ -16,8 +16,8 @@ paths = glob.glob('Test/*.png')
 
 classifier = VGG16(weights='imagenet', include_top=True)
 
-for i in range(len(paths)):
-    img = imread(paths[i])
+for path in paths:
+    img = imread(path)
     if len(img.shape) == 2 or img.shape[2] == 1:
         img = gray2rgb(img)
     if img.shape[2] == 4:
@@ -32,4 +32,5 @@ for i in range(len(paths)):
     result = np.zeros((256, 256, 3))
     result[:, :, 0] = X1[0][:, :, 0]
     result[:, :, 1:] = Y_predict[0]
-    imsave(f'Result/{i+1}.png', lab2rgb(result))
+    file_name = path.split('\\')[1]
+    imsave(f'Result/'+file_name, lab2rgb(result))

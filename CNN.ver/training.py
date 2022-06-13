@@ -38,9 +38,11 @@ if __name__ == '__main__':
     testX = (testX1, classifier.predict(preprocess_input(testX2)))
     if options.alpha:
         m = alpha_v2()
+        m.fit(x=trainX1, y=trainY, batch_size=16, epochs=200, validation_data=(testX1, testY))
     elif options.beta:
         m = beta_v2()
+        m.fit(x=trainX1, y=trainY, batch_size=16, epochs=200, validation_data=(testX1, testY))
     else:
         m = embed_vgg16()
-    m.fit(x=trainX, y=trainY, batch_size=16, epochs=200, validation_data=(testX, testY))
+        m.fit(x=trainX, y=trainY, batch_size=16, epochs=200, validation_data=(testX, testY))
     m.save('Table/classifier-ver.h5')
