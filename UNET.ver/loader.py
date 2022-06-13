@@ -17,7 +17,7 @@ def process(pic_num, train_num, test_num, save=False):
     if not os.path.exists('Test'):
         os.mkdir('Test')
 
-    full_paths = glob.glob('Picture/*')
+    full_paths = glob.glob('Picture/*.png')
     if pic_num > len(full_paths):
         raise ValueError("Pictures are not enough.")
     if pic_num < train_num + test_num:

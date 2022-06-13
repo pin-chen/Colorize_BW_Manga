@@ -24,7 +24,7 @@ if __name__ == '__main__':
     plt.ylabel('Accuracy')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
-    plt.savefig('Table/accuracy.png')
+    plt.savefig('Chart/accuracy.png')
     plt.clf()
 
     plt.plot(history.history['loss'])
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
-    plt.savefig('Table/full-loss.png')
+    plt.savefig('Chart/full-loss.png')
     plt.clf()
 
     plt.xlim(30, 200)
@@ -43,5 +43,5 @@ if __name__ == '__main__':
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
-    plt.savefig('Table/loss.png')
+    plt.savefig('Chart/loss.png')
     plt.clf()
