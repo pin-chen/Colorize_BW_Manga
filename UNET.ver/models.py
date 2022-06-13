@@ -54,7 +54,7 @@ def unet_vgg16():
 
     decoder_output = Conv2D(2, (1, 1), activation='tanh', padding='same')(decoder_c1)
     model = Model(inputs=[encoder_input, embed_input], outputs=decoder_output)
-    model.compile(optimizer=Adam(learning_rate=0.0001), loss='mse', metrics=['accuracy'])
+    model.compile(optimizer=Adam(learning_rate=0.0001), loss='mse', metrics=[CategoricalAccuracy()])
     return model
 
 
