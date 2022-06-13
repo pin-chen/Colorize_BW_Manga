@@ -4,6 +4,7 @@ from keras.optimizers import Adam
 
 
 def alpha_v2():
+    print("*****alpha_v2*****")
     model = Sequential()
     model.add(InputLayer(input_shape=(256, 256, 1)))
     model.add(Conv2D(8, (3, 3), activation='relu', padding='same', strides=2))
@@ -26,6 +27,7 @@ def alpha_v2():
 
 
 def beta_v2():
+    print("*****beta_v2*****")
     model = Sequential()
     model.add(InputLayer(input_shape=(256, 256, 1)))
 
@@ -72,6 +74,7 @@ def beta_v2():
 
 
 def embed_vgg16():
+    print("*****embed_vgg16*****")
     encoder_input = Input(shape=(256, 256, 1,))
 
     encoder_1 = Conv2D(16, (3, 3), activation='relu', padding='same')(encoder_input)
