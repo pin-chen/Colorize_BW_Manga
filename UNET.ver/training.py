@@ -11,7 +11,7 @@ import sys
 
 def readCommand(argv):
     parser = optparse.OptionParser(
-        description='Train agent with different models')
+        description='Train agent with different models, default use unet_vgg16 model')
     parser.set_defaults(alpha=False, beta=False, vgg=False)
     parser.add_option('--unet',
                       dest='unet',
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     options = readCommand(sys.argv)
     if options.best:
         m = best_version()
-    elif options.unet:
+    else:
         m = unet_vgg16()
     classifier = VGG16(weights='imagenet', include_top=True)
     trainX1, trainY, testX1, testY = process(256, 240, 16, save=False)
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     testX = (testX1, classifier.predict(preprocess_input(testX2)))
     if options.best:
         m = best_version()
-    elif options.unet:
+    else:
         m = unet_vgg16()
     history = m.fit(x=trainX, y=trainY, batch_size=16, epochs=200, validation_data=(testX, testY))
     m.save('Table/Unet-Classifier.h5')

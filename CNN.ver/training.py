@@ -11,7 +11,7 @@ import sys
 
 def readCommand(argv):
     parser = optparse.OptionParser(
-        description='Train agent with different models')
+        description='Train agent with different models, default use embed_vgg16 model')
     parser.set_defaults(alpha=False, beta=False, vgg=False)
     parser.add_option('--alpha',
                       dest='alpha',
@@ -40,7 +40,7 @@ if __name__ == '__main__':
         m = alpha_v2()
     elif options.beta:
         m = beta_v2()
-    elif options.vgg:
+    else:
         m = embed_vgg16()
     m.fit(x=trainX, y=trainY, batch_size=16, epochs=200, validation_data=(testX, testY))
     m.save('Table/classifier-ver.h5')
