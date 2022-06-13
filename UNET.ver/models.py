@@ -5,6 +5,7 @@ from keras.optimizers import Adam
 
 
 def unet_vgg16():
+    print("*****unet_vgg16*****")
     encoder_input = Input(shape=(256, 256, 1,))
 
     encoder_c1 = Conv2D(16, (3, 3), activation='relu', padding='same')(encoder_input)
@@ -57,9 +58,8 @@ def unet_vgg16():
     model.compile(optimizer=Adam(learning_rate=0.0001), loss='mse', metrics=[CategoricalAccuracy()])
     return model
 
-
-# 我電腦的GPU跑不動QQ
 def best_version():
+    print("*****best_version*****")
     encoder_input = Input(shape=(256, 256, 1,))
 
     encoder_c1 = Conv2D(16, (3, 3), activation=LeakyReLU(alpha=0.2), padding='same')(encoder_input)
