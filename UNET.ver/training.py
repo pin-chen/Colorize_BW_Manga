@@ -11,7 +11,7 @@ import sys
 
 def readCommand(argv):
     parser = optparse.OptionParser(
-        description='Train agent with different models, default use unet_vgg16 model')
+        description='Train agent with different models, default use the best model')
     parser.set_defaults(unet=False, best=False)
     parser.add_option('--unet',
                       dest='unet',
