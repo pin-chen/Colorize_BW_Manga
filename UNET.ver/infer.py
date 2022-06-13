@@ -12,7 +12,7 @@ if not os.path.exists('Result'):
     os.mkdir('Result')
 
 m = load_model('Table/Unet-Classifier.h5')
-paths = glob.glob('Test/*.png')
+paths = glob.glob('Test/*')
 
 classifier = VGG16(weights='imagenet', include_top=True)
 
