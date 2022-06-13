@@ -8,8 +8,10 @@ import os
 
 
 def process(pic_num, train_num, test_num):
-    if not os.path.exists('../Pictures/oringinal'):
-        os.mkdir('Picture')
+    if not os.path.exists('../Pictures'):
+        os.mkdir('../Pictures')
+        if not os.path.exists('../Pictures/oringinal'):
+            os.mkdir('../Pictures/oringinal')
     if not os.path.exists('Table'):
         os.mkdir('Table')
     if not os.path.exists('Train'):
