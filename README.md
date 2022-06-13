@@ -64,7 +64,7 @@ pip install -r requirements.txt
 
 #### References
 
-reference1: https://emilwallner.medium.com/colorize-b-w-photos-with-a-100-line-neural-network-53d9b4449f8d
+1. https://emilwallner.medium.com/colorize-b-w-photos-with-a-100-line-neural-network-53d9b4449f8d
 
-reference2: https://towardsdatascience.com/unet-line-by-line-explanation-9b191c76baf5
+2. https://towardsdatascience.com/unet-line-by-line-explanation-9b191c76baf5
 
