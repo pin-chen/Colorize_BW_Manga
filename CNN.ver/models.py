@@ -1,5 +1,6 @@
 from keras.layers import Conv1D, Conv2D, UpSampling2D, InputLayer, MaxPooling2D, Input, RepeatVector, Reshape, concatenate
 from keras.models import Sequential, Model
+from keras.metrics import CategoricalAccuracy
 from keras.optimizers import Adam
 
 
@@ -22,7 +23,7 @@ def alpha_v2():
     model.add(Conv2D(4, (3, 3), activation='relu', padding='same'))
     model.add(Conv2D(2, (3, 3), activation='tanh', padding='same'))
     model.add(UpSampling2D((2, 2)))
-    model.compile(optimizer=Adam(learning_rate=0.0002), loss='mse')
+   model.compile(optimizer=Adam(learning_rate=0.0001), loss='mse', metrics=[CategoricalAccuracy()])
     return model
 
 
@@ -69,7 +70,7 @@ def beta_v2():
     model.add(Conv2D(16, (3, 3), activation='relu', padding='same'))
     model.add(Conv2D(16, (3, 3), activation='relu', padding='same'))
     model.add(Conv1D(2, 3, activation='tanh', padding='same'))
-    model.compile(optimizer=Adam(learning_rate=0.0002), loss='mse')
+    model.compile(optimizer=Adam(learning_rate=0.0001), loss='mse', metrics=[CategoricalAccuracy()])
     return model
 
 
@@ -119,5 +120,5 @@ def embed_vgg16():
 
     decoder_output = Conv1D(2, 3, activation='tanh', padding='same')(decoder_1)
     model = Model(inputs=[encoder_input, embed_input], outputs=decoder_output)
-    model.compile(optimizer=Adam(learning_rate=0.00005), loss='mse', metrics=['accuracy'])
+    model.compile(optimizer=Adam(learning_rate=0.0001), loss='mse', metrics=[CategoricalAccuracy()])
     return model
