@@ -62,6 +62,20 @@ pip install -r requirements.txt
 	python infer.py
 	```
 
+#### Results
+
+Color anime image which is changed to grayscale.
+
+| Oringinal | CNN beta_v2 | U-net LeakReLU (best version) |
+| -------- | -------- | -------- |
+| ![](https://i.imgur.com/SQ7UFZk.png) | ![](https://i.imgur.com/64H01HC.png) | ![](https://i.imgur.com/1ybA7Qn.png) |
+
+Color manga.
+
+| Oringinal | U-net LeakReLU (best version) | App on Internet |
+| -------- | -------- | -------- |
+|![](https://i.imgur.com/bhnKHWZ.png)    |   ![](https://i.imgur.com/JDJQ9wo.png)  |   ![](https://i.imgur.com/LxgKAxg.jpg)  |
+
 #### References
 
 1. https://emilwallner.medium.com/colorize-b-w-photos-with-a-100-line-neural-network-53d9b4449f8d
