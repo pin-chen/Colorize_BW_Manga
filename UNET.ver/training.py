@@ -36,7 +36,7 @@ if __name__ == '__main__':
         m = unet_vgg16()
     else:
         m = best_version()
-    history = m.fit(x=trainX, y=trainY, batch_size=8, epochs=250, validation_data=(testX, testY))
+    history = m.fit(x=trainX, y=trainY, batch_size=8, epochs=200, validation_data=(testX, testY))
     m.save('Table/Unet-Classifier.h5')
 
     plt.plot(history.history['categorical_accuracy'])
