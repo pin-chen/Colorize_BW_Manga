@@ -23,7 +23,7 @@ def alpha_v2():
     model.add(Conv2D(4, (3, 3), activation='relu', padding='same'))
     model.add(Conv2D(2, (3, 3), activation='tanh', padding='same'))
     model.add(UpSampling2D((2, 2)))
-   model.compile(optimizer=Adam(learning_rate=0.0001), loss='mse', metrics=[CategoricalAccuracy()])
+    model.compile(optimizer=Adam(learning_rate=0.0001), loss='mse', metrics=[CategoricalAccuracy()])
     return model
 
 
