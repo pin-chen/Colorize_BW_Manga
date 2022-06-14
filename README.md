@@ -64,8 +64,9 @@ pip install -r requirements.txt
 
 #### Results
 
-| ![](https://i.imgur.com/SQ7UFZk.png) | ![](https://i.imgur.com/64H01HC.png) | ![](https://i.imgur.com/1ybA7Qn.png) |
+| Oringinal | CNN beta_v2 | U-net LeakReLU (best version) |
 | -------- | -------- | -------- |
+| ![](https://i.imgur.com/SQ7UFZk.png) | ![](https://i.imgur.com/64H01HC.png) | ![](https://i.imgur.com/1ybA7Qn.png) |
 
 #### References
 
