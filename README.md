@@ -74,7 +74,7 @@ Color manga.
 
 | Oringinal | U-net LeakReLU (best version) | App on Internet |
 | -------- | -------- | -------- |
-|![](https://i.imgur.com/bhnKHWZ.png)    | ![](https://i.imgur.com/LxgKAxg.jpg)     |![](https://i.imgur.com/JDJQ9wo.png)    |
+|![](https://i.imgur.com/bhnKHWZ.png)    |   ![](https://i.imgur.com/JDJQ9wo.png)  |   ![](https://i.imgur.com/LxgKAxg.jpg)  |
 
 #### References
 
