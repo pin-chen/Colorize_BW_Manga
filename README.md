@@ -62,6 +62,11 @@ pip install -r requirements.txt
 	python infer.py
 	```
 
+#### Results
+
+| ![](https://i.imgur.com/SQ7UFZk.png) | ![](https://i.imgur.com/64H01HC.png) | ![](https://i.imgur.com/1ybA7Qn.png) |
+| -------- | -------- | -------- |
+
 #### References
 
 1. https://emilwallner.medium.com/colorize-b-w-photos-with-a-100-line-neural-network-53d9b4449f8d
