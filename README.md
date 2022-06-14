@@ -64,9 +64,17 @@ pip install -r requirements.txt
 
 #### Results
 
+Color anime image which is changed to grayscale.
+
 | Oringinal | CNN beta_v2 | U-net LeakReLU (best version) |
 | -------- | -------- | -------- |
 | ![](https://i.imgur.com/SQ7UFZk.png) | ![](https://i.imgur.com/64H01HC.png) | ![](https://i.imgur.com/1ybA7Qn.png) |
+
+Color manga.
+
+| Oringinal | U-net LeakReLU (best version) | App on Internet |
+| -------- | -------- | -------- |
+| ![](https://i.imgur.com/pWs4QKj.jpg)    | ![](https://i.imgur.com/BH6ko1e.jpg)     | ![](https://i.imgur.com/v8Nr2G9.png)    |
 
 #### References
 
