@@ -1,4 +1,4 @@
-# Introduction-to-AI-Final-Project
+# Colorize B&W Manga
 
 ## Final Project
 
