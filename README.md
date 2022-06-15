@@ -1,7 +1,5 @@
 # Colorize B&W Manga
 
-## Final Project
-
 #### Requirements
 
 ```
